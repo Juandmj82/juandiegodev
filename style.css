@@ -81,7 +81,8 @@
   /* Estilos específicos para las imágenes de los iconos */
   .iconos-lista img {
     width: 3.125rem; /* 50px / 16px = 3.125rem */
-    height: auto;
+    height: 3.125rem; /* Establecer la misma altura para evitar distorsión */
+    object-fit: contain; /* Asegura que la imagen se ajuste dentro del contenedor sin distorsionarse */
     border-radius: 0.625rem; /* 10px / 16px = 0.625rem */
     margin: 0;
   }
