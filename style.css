@@ -1,0 +1,419 @@
+/* ==========================================================================
+   Estilos Base (Mobile First - Aplicados por defecto a pantallas pequeñas)
+   ========================================================================== */
+
+   html {
+    font-size: 16px; /* Tamaño de fuente base para unidades rem */
+    scroll-behavior: smooth; /* Desplazamiento suave para anclas */
+  }
+  
+  body {
+    background: linear-gradient(to bottom left, #000000 0%, #000000 10%, #000033 50%); /* Gradiente de negro a azul oscuro, de esquina superior derecha a inferior izquierda, con transición más rápida y evidente */
+    font-family: 'Roboto', sans-serif; /* Fuente principal */
+    padding-top: calc(1rem + 4rem); /* Compensación inicial para el nav fijo en móviles (ajustar 4rem si es necesario) */
+    padding-left: 0;
+    padding-right: 0;
+    color: white; 
+  }
+  
+  .titulos {
+    color: white;
+    font-family: 'Montserrat', sans-serif; /* Fuente para títulos */
+  }
+  
+  .text-center {
+    text-align: center;
+    margin-bottom: 1.875rem; /* 30px / 16px = 1.875rem */
+  }
+  
+  h1 {
+  margin-bottom: 1.875rem; /* Convertido de 30px a rem para consistencia */
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.8); /* Sutil efecto de glow blanco */
+}
+  
+  h2 {
+    color: white;
+    margin-bottom: 0.9375rem; /* 15px / 16px = 0.9375rem */
+    text-align: center; /* Añadido text-align: center para h2 también */
+  }
+  
+  h3 {
+    color: white;
+    margin-bottom: 0.9375rem; /* 15px / 16px = 0.9375rem */
+    text-align: center;
+  }
+  
+  p {
+    color: white;
+    text-align: center;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1.25rem; /* 20px / 16px = 1.25rem */
+  }
+
+  main {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  
+  /* ==========================================================================
+     Estilos para Imágenes
+     ========================================================================== */
+  
+  /* Estilos generales para la imagen de perfil */
+  img {
+      border-radius: 50%;
+      width: 12.5rem; /* Este tamaño es para la imagen de perfil */
+      height: 12.5rem; /* Este tamaño es para la imagen de perfil - keep px for specific image size */
+      display: block; /* La imagen de perfil sí queremos que sea un bloque para centrarla */
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 1.875rem; /* 30px / 16px = 1.875rem */
+      transition: opacity 1s ease-in-out, transform 1s ease-in-out; /* Transición para opacidad y tamaño/transformación */
+  }
+  
+  .perfil-hidden {
+    opacity: 0; /* Completamente transparente */
+    transform: scale(0.5); /* Empezar con la mitad del tamaño */
+  }
+  
+  /* Estilos específicos para las imágenes de los iconos */
+  .iconos-lista img {
+    width: 3.125rem; /* 50px / 16px = 3.125rem */
+    height: auto;
+    border-radius: 0.625rem; /* 10px / 16px = 0.625rem */
+    margin: 0;
+  }
+  
+  /* Estilos de la imagen dentro de la tarjeta */
+  .img-proyecto-card {
+    width: 100%; /* La imagen ocupa todo el ancho de la tarjeta */
+    height: 100; /* Dejando height como 100 según tu código - esto podría causar problemas, considera 'auto' o un valor fijo con object-fit */
+    display: block;
+    border-radius: 0 !important;
+  }
+  
+  /* Estilos específicos para los iconos sociales */
+  .social-icons img {
+    width: 2.5rem; /* 40px / 16px = 2.5rem */
+    height: auto;
+    border-radius: 0; /* Si quieres que estos iconos no sean redondos como la imagen de perfil */
+  }
+  
+  
+  /* ==========================================================================
+     Estilos para Secciones y Layouts
+     ========================================================================== */
+  
+  .habilidades-container {
+    display: flex; /* Esto hace que las columnas se coloquen una al lado de la otra */
+    justify-content: space-around; /* Distribuye el espacio entre las columnas */
+    gap: 1.25rem; /* 20px / 16px = 1.25rem */
+    margin-top: 1.25rem; /* 20px / 16px = 1.25rem */
+  }
+  
+  .skills-carousel-container {
+    width: 100%;
+    overflow: hidden;
+    margin: 0 auto;
+    padding: 20px 0;
+  }
+
+  /* Estilos específicos para los contenedores de iconos dentro de las columnas */
+  .iconos-lista {
+      display: flex; /* Usa flexbox para alinear los iconos horizontalmente */
+      white-space: nowrap; /* Evita que los elementos se envuelvan a la siguiente línea */
+      animation: scroll 20s linear infinite; /* Aplica la animación */
+      gap: 10px; /* Manteniendo gap en px según tu código */
+      margin-top: 0.625rem; /* 10px / 16px = 0.625rem */
+      margin-bottom: 1.875rem; /* 30px / 16px = 1.875rem */
+  }
+
+  @keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); } /* Desplaza el 50% del ancho para un bucle infinito */
+  }
+  
+  .portafolio-grid {
+    display: grid; /* Convierte este contenedor en un Grid */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Define las columnas */
+    gap: 20px; 
+    padding: 0 20px; 
+    max-width: 75rem; /* 1200px / 16px = 75rem */
+    margin: 1.25rem auto; /* 20px / 16px = 1.25rem */
+  }
+  
+  .proyecto-card {
+    /* Estilos de la tarjeta individual: borde, border-radius, padding interno, etc. */
+    border: 1px solid #ccc;
+    border-radius: 5px; 
+    overflow: hidden;
+  }
+  
+  .proyecto-card-body {
+    /* Estilos del cuerpo de la tarjeta (donde está el título y la descripción) */
+    padding: 0.3125rem 0.9375rem 0.9375rem 0.9375rem; /* 5px, 15px / 16px */
+    text-align: center; 
+  }
+  
+  .proyecto-card-body h5 {
+    color: white; 
+    text-align: center; /* Mantener la alineación */
+    margin-top: 0; /* Eliminar margen superior para que el h5 esté pegado al borde del body */
+    margin-bottom: 0.3125rem; /* 5px / 16px = 0.3125rem */
+    font-size: 1.25rem; /* Aumentar el tamaño de la fuente */
+  }
+  
+  .contacto {
+    margin-top: 1.875rem; /* 30px / 16px = 1.875rem */
+    margin-bottom: 2.5rem; /* 40px / 16px = 2.5rem */
+    text-align: center;
+  }
+  
+  .social-icons {
+    text-align: center;
+    margin-top: 0.9375rem; /* 15px / 16px = 0.9375rem */
+    margin-bottom: 0.9375rem; /* 15px / 16px = 0.9375rem */
+  }
+  
+  .social-icons a {
+    display: inline-block;
+    margin: 0 0.625rem; /* 10px / 16px = 0.625rem */
+  }
+
+  #habilidades-blandas ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+  }
+
+  #habilidades-blandas li {
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  .embed-responsive {
+    position: relative;
+    display: block;
+    width: 100%;
+    padding: 0;
+    overflow: hidden;
+    margin-bottom: 1rem;
+}
+
+.embed-responsive::before {
+    content: "";
+    display: block;
+    padding-top: 56.25%;
+}
+
+.embed-responsive .embed-responsive-item {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+  
+  
+  /* ==========================================================================
+     Estilos para Navegación
+     ========================================================================== */
+  
+  nav {
+    background-color: #333;
+    padding: 1rem 0;
+    position: fixed; /* Hace que el elemento sea fijo */
+    top: 0; /* Lo posiciona en la parte superior */
+    left: 0; /* Lo posiciona en la izquierda */
+    width: 100%; /* Asegura que ocupe todo el ancho */
+    z-index: 1000; /* Asegura que esté encima */
+    text-align: center; /* Centra el contenido dentro del nav */
+  }
+  
+  /* Estilos base para la lista del menú (oculta en pantallas pequeñas por defecto) */
+  nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    flex-direction: column; /* Apila elementos cuando se muestra (en móvil) */
+    position: absolute; /* Posición relativa al nav */
+    top: 100%; /* La lista empieza justo debajo del nav */
+    left: 0;
+    width: 100%;
+    background-color: #333; /* Fondo para el menú desplegable */
+  }
+  
+  /* Clase para mostrar el menú cuando se hace clic en el icono de hamburguesa */
+  nav ul.nav-open {
+    display: flex; /* Muestra la lista cuando tiene la clase 'nav-open' */
+  }
+  
+  /* Estilos base para los elementos de la lista (se sobrescribirán en la Media Query de escritorio) */
+  nav li {
+    margin: 0.5rem 0; /* Espacio vertical para elementos apilados en móvil */
+  }
+  
+  /* Estilos base para los enlaces de navegación */
+  nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0.5rem 1rem; /* Añadir padding para un área de clic más grande en móvil */
+    display: block; /* Hace que el enlace ocupe todo el ancho del li */
+  }
+  
+  nav a:hover {
+    text-decoration: underline;
+    color: #00C853; /* Verde esmeralda */
+  }
+  
+  /* Estilos para el icono de hamburguesa */
+  .menu-toggle {
+    /* display: none; */ /* Lo gestionaremos en las Media Queries */
+    flex-direction: column;
+    justify-content: space-between;
+    width: 2rem;
+    height: 1.5rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 1001;
+  }
+  
+  .menu-toggle .bar {
+    height: 3px;
+    width: 100%;
+    background-color: white;
+    border-radius: 10px;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  /* Estilos para animar el icono de hamburguesa a una 'X' */
+  .menu-toggle.is-active .bar:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+  
+  .menu-toggle.is-active .bar:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .menu-toggle.is-active .bar:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+  
+  
+  /* ==========================================================================
+     Estilos para Botones
+     ========================================================================== */
+  
+  .btn-proyecto { /* Manteniendo px para border-radius pequeños */
+    display: inline-block;
+    background-color: #007bff;
+    color: white;
+    padding: 8px 16px; 
+    text-decoration: none;
+    border-radius: 5px; 
+    margin-top: 1.5625rem; /* 25px / 16px = 1.5625rem */
+    transition: background-color 0.3s ease; /* Transición para el hover */
+  }
+  
+  .btn-proyecto:hover {
+    background-color: #0056b3;
+  }
+  
+  .btn-whatsapp {
+    background-color: #25D366;
+    color: white;
+    margin-top: 0.5rem;
+  }
+  
+  .btn-whatsapp:hover {
+    background-color: #128C7E;
+  }
+  
+  
+  /* ==========================================================================
+     Media Queries (Sobrescriben estilos base para pantallas más grandes)
+     ========================================================================== */
+  
+  /* Media Query para pantallas pequeñas (hasta 991px, por ejemplo) */
+  @media (max-width: 991px) {
+      /* Muestra el icono de hamburguesa en pantallas pequeñas */
+      .menu-toggle {
+          display: flex;
+      }
+  
+      /* Oculta la lista de menú por defecto en móviles */
+      nav ul {
+          display: none;
+      }
+  
+      /* La clase nav-open gestiona la visibilidad de la lista cuando se hace clic */
+      nav ul.nav-open {
+          display: flex; /* Sobrescribe el display: none; */
+      }
+  }
+  
+  
+  /* Estilos para Tablets (Pantallas de 768px y más) */
+  @media (min-width: 768px) {
+    body {
+      padding-top: calc(1.5rem + 4rem); /* Ajustar compensación del nav */
+      padding-left: 0;
+      padding-right: 0;
+    }
+    main {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+  
+  /* Estilos para Escritorio (Pantallas de 992px y más) */
+  @media (min-width: 992px) {
+    body {
+      padding-top: calc(2.5rem + 4rem); /* Ajustar compensación del nav */
+      padding-left: 0;
+      padding-right: 0;
+    }
+    main {
+      padding-left: 2.5rem;
+      padding-right: 2.5rem;
+    }
+  
+    /* Oculta el icono de hamburguesa en pantallas grandes */
+    .menu-toggle {
+      display: none;
+    }
+  
+    /* Muestra la lista de menú en pantallas grandes (diseño horizontal) */
+    nav ul {
+      display: flex; /* Usar flexbox para el diseño horizontal */
+      position: static; /* Quitar el posicionamiento absoluto */
+      flex-direction: row; /* Volver al diseño horizontal */
+      justify-content: center; /* Centra los elementos de navegación horizontalmente */
+      background-color: transparent; /* Quitar el fondo si no se quiere un color sólido en escritorio */
+    }
+  
+    nav li {
+      display: inline-block; /* Volver a la disposición horizontal */
+      margin: 0 1rem; /* Volver al margen horizontal */
+    }
+  
+     nav a {
+      padding: 0; /* Quitar el padding extra para el área de clic */
+      display: inline; /* Volver a display: inline */
+    }
+  
+    /* Estilos para la sección de habilidades en escritorio */
+    .habilidades-container {
+      flex-direction: row; /* Columnas una al lado de la otra */
+      justify-content: space-around; /* Distribuir espacio */
+    }
+  }
+  
