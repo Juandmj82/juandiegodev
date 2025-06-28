@@ -148,14 +148,19 @@
   .proyecto-card {
     /* Estilos de la tarjeta individual: borde, border-radius, padding interno, etc. */
     border: 1px solid #ccc;
-    border-radius: 5px; 
+    border-radius: 5px;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
   }
   
   .proyecto-card-body {
     /* Estilos del cuerpo de la tarjeta (donde está el título y la descripción) */
     padding: 0.3125rem 0.9375rem 0.9375rem 0.9375rem; /* 5px, 15px / 16px */
-    text-align: center; 
+    text-align: center;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
   }
   
   .proyecto-card-body h5 {
@@ -164,6 +169,43 @@
     margin-top: 0; /* Eliminar margen superior para que el h5 esté pegado al borde del body */
     margin-bottom: 0.3125rem; /* 5px / 16px = 0.3125rem */
     font-size: 1.25rem; /* Aumentar el tamaño de la fuente */
+  }
+
+  .cursos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 0 20px;
+    max-width: 75rem; /* 1200px / 16px = 75rem */
+    margin: 1.25rem auto;
+  }
+
+  .curso-card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .curso-card-body {
+    padding: 0.3125rem 0.9375rem 0.9375rem 0.9375rem;
+    text-align: center;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .curso-card-body h4 {
+    color: white;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 0.3125rem;
+    font-size: 1.25rem;
+  }
+
+  .curso-card-body .card-text {
+    margin-top: 1rem;
   }
   
   .contacto {
@@ -321,8 +363,9 @@
     padding: 8px 16px; 
     text-decoration: none;
     border-radius: 5px; 
-    margin-top: 1.5625rem; /* 25px / 16px = 1.5625rem */
+    margin-top: auto; /* 25px / 16px = 1.5625rem */
     transition: background-color 0.3s ease; /* Transición para el hover */
+    order: 4;
   }
   
   .btn-proyecto:hover {
