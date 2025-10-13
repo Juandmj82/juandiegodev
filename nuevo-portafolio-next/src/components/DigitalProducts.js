@@ -34,7 +34,7 @@ const DigitalProducts = () => {
         Laboratorio de Productos Digitales<span className="text-accent">.</span>
       </h2>
       <p className="text-lg text-secondary mt-6 max-w-3xl mx-auto text-center">
-        Además de mi especialización en backend, disfruto llevando ideas desde el concepto hasta un producto web funcional y desplegado, utilizando flujos de trabajo ágiles y modernos.
+        Además de mi formación en backend, disfruto llevando ideas desde el concepto hasta un producto web funcional y desplegado, utilizando flujos de trabajo ágiles y modernos.
       </p>
       <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
         {digitalProducts.map((product, index) => (

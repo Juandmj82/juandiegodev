@@ -9,7 +9,7 @@ const Hero = () => {
           <p className="text-xs sm:text-sm font-semibold tracking-[0.2em] sm:tracking-[0.35em] uppercase text-secondary mb-4 animate-typewriter overflow-hidden">
             Junior Software Developer
             <br />
-            Backend con Java & Spring Boot
+            Backend Java & Spring Boot
           </p>
           <h1 className="text-5xl md:text-7xl font-bold text-primary uppercase tracking-[0.15em] leading-[1.05] animate-fade-in-name">
             Juan Diego Merchán
