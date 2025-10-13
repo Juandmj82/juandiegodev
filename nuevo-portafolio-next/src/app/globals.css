@@ -1,0 +1,98 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #100E0D;
+  --color-primary: #EAEAEA;
+  --color-secondary: #A1A1A1;
+  --color-accent: #E87A3E;
+  --color-surface: #1A1614;
+  --color-border: #29221F;
+}
+
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-scroll {
+  animation: scroll 20s linear infinite;
+}
+
+.group-hover\:pause:hover {
+  animation-play-state: paused;
+}
+
+@keyframes typewriter {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+.animate-typewriter {
+  display: inline-block;
+  overflow: hidden;
+  border-right: 2px solid var(--color-accent);
+  white-space: nowrap;
+  animation: typewriter 3s steps(60, end) forwards, blink 0.75s step-end 3s, hide-cursor 0s 3s forwards;
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+@keyframes hide-cursor {
+  to {
+    border-color: transparent;
+  }
+}
+
+@keyframes fade-in-name {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-name {
+  opacity: 0;
+  animation: fade-in-name 1s ease-out 3.2s forwards;
+}
+
+@keyframes fade-in-image {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.animate-fade-in-image {
+  opacity: 0;
+  animation: fade-in-image 1.5s ease-out 4.5s forwards;
+}
+
+@keyframes fade-in-copy {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-copy {
+  opacity: 0;
+  animation: fade-in-copy 1s ease-out 6s forwards;
+}
