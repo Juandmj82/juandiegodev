@@ -11,16 +11,16 @@ export const metadata = {
   title: 'Juan Diego Merchán - Software Developer',
   description: 'Portafolio de Juan Diego Merchán, desarrollador de software especializado en backend con Java y Spring Boot.',
   openGraph: {
-    title: 'Juan Diego Merchán - Software Developer',
+    title: 'Juan Diego Merchán - Junior Software Developer',
     description: 'Portafolio de Juan Diego Merchán, desarrollador de software especializado en backend con Java y Spring Boot.',
     url: 'https://juandiegodev.vercel.app',
     siteName: 'Juan Diego Merchán Portfolio',
     images: [
       {
-        url: '/profile-hero.webp',
-        width: 896,
-        height: 1152,
-        alt: 'Juan Diego Merchán - Software Developer',
+        url: '/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'Juan Diego Merchán - Junior Software Developer',
       },
     ],
     locale: 'es_ES',
@@ -28,9 +28,9 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Juan Diego Merchán - Software Developer',
+    title: 'Juan Diego Merchán - Junior Software Developer',
     description: 'Portafolio de Juan Diego Merchán, desarrollador de software especializado en backend con Java y Spring Boot.',
-    images: ['/profile-hero.webp'],
+    images: ['/og-image.png'],
   },
 }
 
