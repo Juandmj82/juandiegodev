@@ -6,7 +6,7 @@ const Hero = () => {
       <div className="grid grid-cols-1 gap-12 items-center md:grid-cols-5">
         {/* Columna de Texto (Izquierda) */}
         <div className="md:col-span-3 text-center md:text-left">
-          <p className="text-sm font-semibold tracking-[0.35em] uppercase text-secondary mb-4 animate-typewriter">
+          <p className="text-xs sm:text-sm font-semibold tracking-[0.2em] sm:tracking-[0.35em] uppercase text-secondary mb-4 animate-typewriter overflow-hidden">
             Junior Software Developer
             <br />
             Backend con Java & Spring Boot
