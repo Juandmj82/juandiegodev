@@ -2,7 +2,7 @@ const skills = [
   { name: 'Java', icon: '/icons/java.png' },
   { name: 'Spring Boot', icon: '/icons/springboot.png' },
   { name: 'Python', icon: '/icons/python.png' },
-  { name: 'JavaScript', icon: '/icons/javascript.png' },
+  { name: 'JavaScript', icon: '/icons/javaScript.png' },
   { name: 'HTML5', icon: '/icons/html.png' },
   { name: 'CSS3', icon: '/icons/css.png' },
   { name: 'SQL', icon: '/icons/mysql.png' },
