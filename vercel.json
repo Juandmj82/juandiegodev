@@ -1,0 +1,5 @@
+{
+  "buildCommand": "cd nuevo-portafolio-next && npm run build",
+  "outputDirectory": "nuevo-portafolio-next/.next",
+  "installCommand": "cd nuevo-portafolio-next && npm install"
+}
