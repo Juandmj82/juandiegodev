@@ -28,7 +28,7 @@ const Education = () => {
         ))}
       </div>
       <div className="mt-16 text-center">
-        <Link href="/certificaciones" className="border border-secondary/50 text-secondary font-bold py-3 px-6 rounded-md transition-colors duration-300 hover:bg-surface hover:border-surface">
+        <Link href="/certificaciones" className="inline-block border border-secondary/50 text-secondary font-bold py-3 px-6 rounded-md transition-all duration-300 hover:bg-accent/10 hover:border-accent hover:text-accent hover:shadow-[0_0_15px_rgba(255,77,26,0.3)]">
           Ver Catálogo Completo
         </Link>
       </div>
