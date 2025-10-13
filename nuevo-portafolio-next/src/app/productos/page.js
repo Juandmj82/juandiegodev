@@ -25,7 +25,7 @@ export default function ProductosPage() {
             ))}
           </div>
           <div className="mt-16 text-center">
-            <Link href="/" className="font-semibold text-accent transition-opacity duration-300 hover:opacity-80">
+            <Link href="/" className="inline-block border border-secondary/50 text-secondary font-bold py-3 px-6 rounded-md transition-all duration-300 hover:bg-accent/10 hover:border-accent hover:text-accent hover:shadow-[0_0_15px_rgba(255,77,26,0.3)]">
               &larr; Volver a la página principal
             </Link>
           </div>
