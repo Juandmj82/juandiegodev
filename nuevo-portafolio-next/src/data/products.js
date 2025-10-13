@@ -12,7 +12,7 @@ export const allDigitalProducts = [
     liveUrl: "https://pocket-wise-ten.vercel.app/"
   },
   {
-    title: "Página para Terapia de Conexión",
+    title: "Página de Conexión a través de la Arteterapia",
     imageUrl: "/products/connect-art.webp",
     stack: ["HTML", "CSS", "JS", "Vercel"],
     liveUrl: "https://connectartherapie.vercel.app/"
