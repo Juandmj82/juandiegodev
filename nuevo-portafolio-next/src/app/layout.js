@@ -9,7 +9,29 @@ const inter = Inter({
 
 export const metadata = {
   title: 'Juan Diego Merchán - Software Developer',
-  description: 'Portafolio de Juan Diego Merchán, desarrollador de software.',
+  description: 'Portafolio de Juan Diego Merchán, desarrollador de software especializado en backend con Java y Spring Boot.',
+  openGraph: {
+    title: 'Juan Diego Merchán - Software Developer',
+    description: 'Portafolio de Juan Diego Merchán, desarrollador de software especializado en backend con Java y Spring Boot.',
+    url: 'https://juandiegodev.vercel.app',
+    siteName: 'Juan Diego Merchán Portfolio',
+    images: [
+      {
+        url: '/profile-hero.webp',
+        width: 400,
+        height: 400,
+        alt: 'Juan Diego Merchán - Software Developer',
+      },
+    ],
+    locale: 'es_ES',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Juan Diego Merchán - Software Developer',
+    description: 'Portafolio de Juan Diego Merchán, desarrollador de software especializado en backend con Java y Spring Boot.',
+    images: ['/profile-hero.webp'],
+  },
 }
 
 export default function RootLayout({ children }) {
