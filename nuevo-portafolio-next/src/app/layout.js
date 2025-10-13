@@ -18,8 +18,8 @@ export const metadata = {
     images: [
       {
         url: '/profile-hero.webp',
-        width: 400,
-        height: 400,
+        width: 896,
+        height: 1152,
         alt: 'Juan Diego Merchán - Software Developer',
       },
     ],
