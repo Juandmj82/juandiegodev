@@ -27,7 +27,7 @@ export const allDigitalProducts = [
     title: "Landing Page para Diseñador",
     imageUrl: "/products/landing-diseno.webp",
     stack: ["Next.js", "Vercel", "IA Asistida"],
-    liveUrl: "https://landingdiseno.vercel.app/"
+    liveUrl: "https://auroragraphics.vercel.app/"
   },
   {
     title: "Web para Abogados Inmobiliarios",
