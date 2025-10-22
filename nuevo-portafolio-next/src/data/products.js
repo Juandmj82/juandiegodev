@@ -1,5 +1,12 @@
 export const allDigitalProducts = [
   {
+    title: "FOCO - App de Productividad",
+    imageUrl: "/products/foco.webp",
+    stack: ["Next.js", "React", "Vercel"],
+    liveUrl: "https://foco-eta.vercel.app/",
+    description: "Tu asistente personal de productividad: Organiza tu día con rutinas, construye hábitos con rachas, insights automáticos, búsqueda global (Cmd+K) y sync con Google Calendar."
+  },
+  {
     title: "Landing Page para Escuela de Música",
     imageUrl: "/products/escuela-musica.webp",
     stack: ["HTML", "CSS", "JS", "Hosting"],
