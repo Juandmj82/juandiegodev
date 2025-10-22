@@ -2,8 +2,8 @@ import ProductCard from './ProductCard';
 import { allDigitalProducts } from '@/data/products';
 import Link from 'next/link';
 
-// Seleccionamos solo los primeros 3 proyectos para la página principal
-const featuredProducts = allDigitalProducts.slice(0, 3);
+// Seleccionamos solo los primeros 4 proyectos para la página principal
+const featuredProducts = allDigitalProducts.slice(0, 4);
 
 const DigitalProducts = () => {
   return (
