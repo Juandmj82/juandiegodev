@@ -42,5 +42,12 @@ export const allDigitalProducts = [
     imageUrl: "/products/legal.webp",
     stack: ["Firebase", "Hosting", "IA Asistida"],
     liveUrl: "https://studio--studio-5547360507-9d3d3.us-central1.hosted.app/"
+  },
+  {
+    title: "Sweetlab - Repostería Artesanal",
+    imageUrl: "/products/sweetlab.webp",
+    stack: ["Next.js", "React", "Vercel"],
+    liveUrl: "https://sweetlab.vercel.app/",
+    description: "Combinamos la precisión de la ciencia con la calidez de la repostería artesanal para crear experiencias inolvidables."
   }
 ];
