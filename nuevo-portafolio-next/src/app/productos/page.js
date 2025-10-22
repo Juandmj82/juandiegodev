@@ -21,7 +21,7 @@ export default function ProductosPage() {
           </div>
           <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
             {allDigitalProducts.map((product, index) => (
-              <ProductCard key={index} {...product} />
+              <ProductCard key={index} {...product} showDescription={true} />
             ))}
           </div>
           <div className="mt-16 text-center">

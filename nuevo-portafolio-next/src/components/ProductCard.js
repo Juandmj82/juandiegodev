@@ -1,6 +1,6 @@
 import Image from 'next/image';
 
-const ProductCard = ({ title, imageUrl, stack, liveUrl, description }) => {
+const ProductCard = ({ title, imageUrl, stack, liveUrl, description, showDescription = false }) => {
   return (
     <a href={liveUrl} target="_blank" rel="noopener noreferrer" className="group block bg-surface rounded-lg overflow-hidden shadow-lg border border-border transition-all duration-300 hover:shadow-accent/20 hover:shadow-lg hover:border-accent/50">
       <div className="overflow-hidden">
@@ -14,7 +14,7 @@ const ProductCard = ({ title, imageUrl, stack, liveUrl, description }) => {
       </div>
       <div className="p-6">
         <h3 className="text-xl font-bold text-primary">{title}</h3>
-        {description && (
+        {showDescription && description && (
           <p className="text-sm text-secondary mt-2 leading-relaxed">{description}</p>
         )}
         <div className="flex flex-wrap gap-2 mt-3">

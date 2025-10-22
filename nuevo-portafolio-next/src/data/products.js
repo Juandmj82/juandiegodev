@@ -10,7 +10,8 @@ export const allDigitalProducts = [
     title: "App de Finanzas Personales",
     imageUrl: "/products/pocket-wise.webp",
     stack: ["React", "Vite", "Vercel"],
-    liveUrl: "https://pocket-wise-ten.vercel.app/"
+    liveUrl: "https://pocket-wise-ten.vercel.app/",
+    description: "Gestiona tus finanzas de manera inteligente y sencilla. Controla tus gastos e ingresos con una interfaz intuitiva y reportes claros."
   },
   {
     title: "Landing Page para Escuela de Música",
