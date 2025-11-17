@@ -49,5 +49,12 @@ export const allDigitalProducts = [
     stack: ["Next.js", "React", "Vercel"],
     liveUrl: "https://sweetlab.vercel.app/",
     description: "Combinamos la precisión de la ciencia con la calidez de la repostería artesanal para crear experiencias inolvidables."
+  },
+  {
+    title: "Mercafresh",
+    imageUrl: "/products/mercafresh.webp",
+    stack: ["React", "TypeScript", "Tailwind CSS", "shadcn/ui", "GSAP"],
+    liveUrl: "https://mercafresh.vercel.app/",
+    description: "Mercafresh es una página web moderna que combina React y TypeScript con Tailwind, shadcn/ui y animaciones GSAP para una experiencia responsiva, accesible y fluida."
   }
 ];
