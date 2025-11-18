@@ -56,5 +56,12 @@ export const allDigitalProducts = [
     stack: ["React", "TypeScript", "Tailwind CSS", "shadcn/ui", "GSAP"],
     liveUrl: "https://mercafresh.vercel.app/",
     description: "Mercafresh es una página web moderna que combina React y TypeScript con Tailwind, shadcn/ui y animaciones GSAP para una experiencia responsiva, accesible y fluida."
+  },
+  {
+    title: "Lavandería Coral",
+    imageUrl: "/products/lavanderia.webp",
+    stack: ["React", "TypeScript", "Tailwind CSS", "shadcn/ui", "GSAP"],
+    liveUrl: "https://lavanderia-coral.vercel.app/",
+    description: "Desarrollada con React, TypeScript y Tailwind CSS, esta landing page integra animaciones GSAP y componentes shadcn/ui para una experiencia moderna, responsiva y de alto rendimiento."
   }
 ];
