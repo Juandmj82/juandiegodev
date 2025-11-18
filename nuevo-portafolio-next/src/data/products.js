@@ -58,7 +58,7 @@ export const allDigitalProducts = [
     description: "Mercafresh es una página web moderna que combina React y TypeScript con Tailwind, shadcn/ui y animaciones GSAP para una experiencia responsiva, accesible y fluida."
   },
   {
-    title: "Lavandería Coral",
+    title: "Lavandería MasterClean",
     imageUrl: "/products/lavanderia.webp",
     stack: ["React", "TypeScript", "Tailwind CSS", "shadcn/ui", "GSAP"],
     liveUrl: "https://lavanderia-coral.vercel.app/",
