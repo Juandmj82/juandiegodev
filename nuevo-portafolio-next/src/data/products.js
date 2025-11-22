@@ -63,5 +63,12 @@ export const allDigitalProducts = [
     stack: ["React", "TypeScript", "Tailwind CSS", "shadcn/ui", "GSAP"],
     liveUrl: "https://lavanderia-coral.vercel.app/",
     description: "Desarrollada con React, TypeScript y Tailwind CSS, esta landing page integra animaciones GSAP y componentes shadcn/ui para una experiencia moderna, responsiva y de alto rendimiento."
+  },
+  {
+    title: "Colegio Salesiano Valdocco",
+    imageUrl: "/products/colegio.webp",
+    stack: ["HTML", "CSS", "JavaScript", "Web Components", "Decap CMS"],
+    liveUrl: "https://valdocco.vercel.app/index.html",
+    description: "Web institucional ligera construida con HTML, CSS y JS, navegación con Web Components y contenido editable desde Decap CMS para una carga rápida y mantenimiento sencillo."
   }
 ];
