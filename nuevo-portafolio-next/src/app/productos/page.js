@@ -1,34 +1,10 @@
-'use client';
-
 import { allDigitalProducts } from '@/data/products';
 import ProductCard from '@/components/ProductCard';
 import Link from 'next/link';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import { useState, useMemo } from 'react';
 
 export default function ProductosPage() {
-  const [selectedFilter, setSelectedFilter] = useState('Todos');
-
-  // Extraer todas las tecnologías únicas
-  const allTechnologies = useMemo(() => {
-    const techSet = new Set();
-    allDigitalProducts.forEach(product => {
-      product.stack.forEach(tech => techSet.add(tech));
-    });
-    return ['Todos', ...Array.from(techSet).sort()];
-  }, []);
-
-  // Filtrar productos según la tecnología seleccionada
-  const filteredProducts = useMemo(() => {
-    if (selectedFilter === 'Todos') {
-      return allDigitalProducts;
-    }
-    return allDigitalProducts.filter(product =>
-      product.stack.includes(selectedFilter)
-    );
-  }, [selectedFilter]);
-
   return (
     <>
       <Header />
@@ -86,31 +62,9 @@ export default function ProductosPage() {
             </p>
           </div>
 
-          {/* Technology Filters */}
-          <div className="mt-12">
-            <h3 className="text-sm font-semibold text-secondary mb-4 text-center">Filtrar por tecnología:</h3>
-            <div className="flex flex-wrap justify-center gap-2">
-              {allTechnologies.map((tech) => (
-                <button
-                  key={tech}
-                  onClick={() => setSelectedFilter(tech)}
-                  className={`px-4 py-2 rounded-md text-sm font-medium transition-all duration-300 ${selectedFilter === tech
-                    ? 'bg-accent text-white shadow-[0_0_15px_rgba(255,77,26,0.4)]'
-                    : 'bg-background border border-secondary/30 text-secondary hover:border-accent/50 hover:text-accent'
-                    }`}
-                >
-                  {tech}
-                </button>
-              ))}
-            </div>
-            <p className="text-center text-sm text-secondary/70 mt-4">
-              Mostrando {filteredProducts.length} de {allDigitalProducts.length} productos
-            </p>
-          </div>
-
           {/* Products Grid */}
           <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
-            {filteredProducts.map((product, index) => (
+            {allDigitalProducts.map((product, index) => (
               <ProductCard key={index} {...product} showDescription={true} />
             ))}
           </div>
