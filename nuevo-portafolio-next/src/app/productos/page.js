@@ -82,7 +82,7 @@ export default function ProductosPage() {
               </div>
             </div>
             <p className="text-xs text-secondary/70 mt-6 italic">
-              No es "código generado por IA", es desarrollo profesional acelerado con IA como herramienta de productividad.
+              No es &ldquo;código generado por IA&rdquo;, es desarrollo profesional acelerado con IA como herramienta de productividad.
             </p>
           </div>
 
@@ -95,8 +95,8 @@ export default function ProductosPage() {
                   key={tech}
                   onClick={() => setSelectedFilter(tech)}
                   className={`px-4 py-2 rounded-md text-sm font-medium transition-all duration-300 ${selectedFilter === tech
-                      ? 'bg-accent text-white shadow-[0_0_15px_rgba(255,77,26,0.4)]'
-                      : 'bg-background border border-secondary/30 text-secondary hover:border-accent/50 hover:text-accent'
+                    ? 'bg-accent text-white shadow-[0_0_15px_rgba(255,77,26,0.4)]'
+                    : 'bg-background border border-secondary/30 text-secondary hover:border-accent/50 hover:text-accent'
                     }`}
                 >
                   {tech}
