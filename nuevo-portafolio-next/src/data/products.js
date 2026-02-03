@@ -1,5 +1,12 @@
 export const allDigitalProducts = [
   {
+    title: "La Manada - PWA para Mascotas",
+    imageUrl: "/products/lamanada.webp",
+    stack: ["React", "TypeScript", "Vite", "Tailwind", "Supabase", "PWA"],
+    liveUrl: "https://youtu.be/iPwgko1wHZI",
+    description: "Aplicación web progresiva (PWA) para la gestión integral de la salud y bienestar de tus mascotas. 'Donde cada huella cuenta'."
+  },
+  {
     title: "FOCO - App de Productividad",
     imageUrl: "/products/foco.webp",
     stack: ["React", "TypeScript", "Vite", "Tailwind", "Shadcn/ui", "Supabase"],
@@ -71,7 +78,7 @@ export const allDigitalProducts = [
     liveUrl: "https://valdocco.vercel.app/index.html",
     description: "Web institucional ligera construida con HTML, CSS y JS, navegación con Web Components y contenido editable desde Decap CMS para una carga rápida y mantenimiento sencillo."
   },
-   {
+  {
     title: "Elenavarken Studio",
     imageUrl: "/products/artista.webp",
     stack: ["React", "TypeScript", "Tailwind CSS", "GSAP", "shadcn/ui", "Radix"],
