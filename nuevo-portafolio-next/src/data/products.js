@@ -3,7 +3,7 @@ export const allDigitalProducts = [
     title: "La Manada - PWA para Mascotas",
     imageUrl: "/products/lamanada.webp",
     stack: ["React", "TypeScript", "Vite", "Tailwind", "Supabase", "PWA"],
-    liveUrl: "https://youtu.be/iPwgko1wHZI",
+    liveUrl: "https://lamanada.vercel.app/login",
     description: "Aplicación web progresiva (PWA) para la gestión integral de la salud y bienestar de tus mascotas. 'Donde cada huella cuenta'."
   },
   {
