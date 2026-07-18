@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brief de proyecto — JuandiDev</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#100E0D;
+    --bg-2:#1A1614;
+    --text:#EAEAEA;
+    --text-dim:#A1A1A1;
+    --accent:#E87A3E;
+    --accent-dim:#5A3A22;
+    --line:#29221F;
+    --ok:#E87A3E;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:
+      radial-gradient(ellipse at top, rgba(232,122,62,0.10), transparent 60%),
+      var(--bg);
+    color:var(--text);
+    font-family:'Inter',sans-serif;
+    min-height:100vh;
+  }
+  .wrap{
+    max-width:640px;
+    margin:0 auto;
+    padding:64px 24px 96px;
+  }
+  .brand{
+    display:flex;
+    align-items:baseline;
+    justify-content:space-between;
+    margin-bottom:52px;
+  }
+  .brand-name{
+    font-family:'Inter',sans-serif;
+    font-weight:600;
+    font-size:14px;
+    letter-spacing:0.01em;
+    color:var(--text);
+  }
+  .brand-name span{ color:var(--accent); }
+  .brand-tag{
+    font-family:'Inter',sans-serif;
+    font-size:11px;
+    color:var(--text-dim);
+  }
+  h1{
+    font-weight:500;
+    font-size:36px;
+    line-height:1.15;
+    margin:0 0 12px;
+    letter-spacing:-0.01em;
+  }
+  .sub{
+    font-size:15px;
+    color:var(--text-dim);
+    line-height:1.6;
+    max-width:48ch;
+    margin:0 0 44px;
+  }
+
+  .progress{ margin-bottom:44px; }
+  .progress-track{
+    height:2px;
+    background:var(--line);
+    border-radius:2px;
+    overflow:hidden;
+  }
+  .progress-fill{
+    height:100%;
+    background:var(--accent);
+    width:20%;
+    transition:width 0.25s ease;
+  }
+  .progress-meta{
+    display:flex;
+    justify-content:space-between;
+    font-family:'Inter',sans-serif;
+    font-size:11px;
+    color:var(--text-dim);
+    margin-top:10px;
+    letter-spacing:0.02em;
+  }
+
+  .step{ display:none; animation:rise 0.35s ease; }
+  .step.active{ display:block; }
+  @keyframes rise{ from{opacity:0; transform:translateY(6px);} to{opacity:1; transform:translateY(0);} }
+
+  .step-eyebrow{
+    font-family:'Inter',sans-serif;
+    font-weight:600;
+    font-size:12px;
+    color:var(--accent);
+    margin-bottom:8px;
+    letter-spacing:0.02em;
+  }
+  .step-title{
+    font-size:24px;
+    font-weight:500;
+    margin:0 0 32px;
+    letter-spacing:-0.01em;
+  }
+
+  .field{ margin-bottom:24px; }
+  label{
+    display:block;
+    font-size:14px;
+    color:var(--text);
+    margin-bottom:8px;
+    line-height:1.5;
+  }
+  .hint{
+    font-size:12px;
+    color:var(--text-dim);
+    margin-top:6px;
+  }
+  input[type=text], input[type=email], input[type=tel], textarea{
+    width:100%;
+    background:var(--bg-2);
+    border:1px solid var(--line);
+    border-radius:4px;
+    color:var(--text);
+    padding:12px 14px;
+    font-family:'Inter',sans-serif;
+    font-size:14px;
+    outline:none;
+    transition:border-color 0.15s;
+  }
+  input::placeholder, textarea::placeholder{ color:var(--text-dim); opacity:0.7; }
+  input:focus, textarea:focus{ border-color:var(--accent); }
+  textarea{ min-height:96px; resize:vertical; }
+
+  .choice-grid{ display:grid; gap:10px; }
+  .choice{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    border:1px solid var(--line);
+    border-radius:4px;
+    padding:13px 14px;
+    cursor:pointer;
+    transition:border-color 0.15s, background 0.15s;
+    font-size:14px;
+  }
+  .choice:hover{ border-color:var(--accent-dim); }
+  .choice input{ width:auto; accent-color:var(--accent); }
+  .choice.picked{ border-color:var(--accent); background:rgba(232,122,62,0.08); }
+
+  .scale{
+    display:flex;
+    border:1px solid var(--line);
+    border-radius:4px;
+    overflow:hidden;
+  }
+  .scale button{
+    flex:1;
+    background:transparent;
+    border:none;
+    border-right:1px solid var(--line);
+    color:var(--text-dim);
+    font-family:'Inter',sans-serif;
+    font-weight:500;
+    font-size:14px;
+    padding:12px 0;
+    cursor:pointer;
+  }
+  .scale button:last-child{ border-right:none; }
+  .scale button.picked{ background:var(--accent); color:var(--bg); }
+  .scale-labels{
+    display:flex;
+    justify-content:space-between;
+    font-size:11px;
+    color:var(--text-dim);
+    margin-top:6px;
+  }
+
+  .nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-top:40px;
+    padding-top:24px;
+    border-top:1px solid var(--line);
+  }
+  .btn{
+    font-family:'Inter',sans-serif;
+    font-weight:500;
+    font-size:14px;
+    background:transparent;
+    border:1px solid var(--line);
+    color:var(--text);
+    padding:12px 22px;
+    border-radius:4px;
+    cursor:pointer;
+    transition:border-color 0.15s, background 0.15s;
+  }
+  .btn:hover{ border-color:var(--text-dim); }
+  .btn-primary{
+    background:var(--accent);
+    border-color:var(--accent);
+    color:var(--bg);
+    font-weight:600;
+  }
+  .btn-primary:hover{ background:#F08E58; border-color:#F08E58; }
+  .btn-ghost{ border-color:transparent; color:var(--text-dim); }
+  .btn-ghost:hover{ color:var(--text); border-color:transparent; }
+  .btn:disabled{ opacity:0.35; cursor:not-allowed; }
+
+  .final{ text-align:center; padding:40px 0; }
+  .final .mark{
+    width:48px; height:48px; margin:0 auto 20px;
+    border:1px solid var(--ok); border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    color:var(--ok); font-size:22px; font-family:'Inter',sans-serif; font-weight:600;
+  }
+  .final h2{
+    font-size:24px;
+    font-weight:500;
+    margin:0 0 10px;
+  }
+  .final p{ color:var(--text-dim); font-size:14px; max-width:42ch; margin:0 auto; line-height:1.6;}
+
+  @media(max-width:480px){
+    .wrap{ padding:40px 18px 72px; }
+    h1{ font-size:28px; }
+    .step-title{ font-size:20px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="brand">
+    <span class="brand-name">Juandi<span>Dev</span></span>
+    <span class="brand-tag">Software a la medida</span>
+  </div>
+
+  <h1>Cuéntame sobre tu proyecto</h1>
+  <p class="sub">Un brief corto en cinco partes para entender qué necesitas y proponerte una solución concreta.</p>
+
+  <div class="progress">
+    <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+    <div class="progress-meta">
+      <span id="stepLabel">Paso 1 de 5</span>
+      <span id="stepName">Contacto</span>
+    </div>
+  </div>
+
+  <form id="briefForm">
+
+    <div class="step active" data-s="1">
+      <div class="step-eyebrow">01</div>
+      <div class="step-title">Datos de contacto</div>
+
+      <div class="field">
+        <label for="name">Nombre completo o nombre de tu empresa</label>
+        <input type="text" id="name" placeholder="Escribe tu nombre o el de tu empresa">
+      </div>
+      <div class="field">
+        <label for="email">Correo electrónico principal</label>
+        <input type="email" id="email" placeholder="Tu correo de contacto">
+      </div>
+      <div class="field">
+        <label for="phone">Número de teléfono o WhatsApp</label>
+        <input type="tel" id="phone" placeholder="Con indicativo de país">
+      </div>
+    </div>
+
+    <div class="step" data-s="2">
+      <div class="step-eyebrow">02</div>
+      <div class="step-title">Tu situación actual</div>
+
+      <div class="field">
+        <label>¿Qué tan grande es lo que quieres digitalizar u organizar?</label>
+        <div class="choice-grid" data-group="scale">
+          <label class="choice"><input type="radio" name="scale" value="pequeño">Algo pequeño, uso personal o de un solo equipo</label>
+          <label class="choice"><input type="radio" name="scale" value="mediano">Un proceso con varias personas involucradas</label>
+          <label class="choice"><input type="radio" name="scale" value="grande">Una operación grande o varios equipos</label>
+          <label class="choice"><input type="radio" name="scale" value="no-se">No estoy seguro todavía</label>
+        </div>
+      </div>
+      <div class="field">
+        <label>¿Cómo resuelves esto hoy, sin un sistema propio?</label>
+        <div class="choice-grid" data-group="tracking">
+          <label class="choice"><input type="radio" name="tracking" value="manual">Hojas de cálculo o notas manuales</label>
+          <label class="choice"><input type="radio" name="tracking" value="chat">WhatsApp o mensajes sueltos</label>
+          <label class="choice"><input type="radio" name="tracking" value="otra-herramienta">Otra herramienta que no encaja del todo</label>
+          <label class="choice"><input type="radio" name="tracking" value="nada">No tengo un método definido</label>
+        </div>
+      </div>
+      <div class="field">
+        <label>¿Cuánto tiempo dedicas hoy a esta tarea cada semana?</label>
+        <div class="choice-grid" data-group="time">
+          <label class="choice"><input type="radio" name="time" value="<1h">Menos de 1 hora</label>
+          <label class="choice"><input type="radio" name="time" value="1-3h">1 – 3 horas</label>
+          <label class="choice"><input type="radio" name="time" value="3-5h">3 – 5 horas</label>
+          <label class="choice"><input type="radio" name="time" value="5h+">Más de 5 horas</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="step" data-s="3">
+      <div class="step-eyebrow">03</div>
+      <div class="step-title">El proyecto</div>
+
+      <div class="field">
+        <label for="desc">Cuéntame brevemente qué necesitas o qué te gustaría lograr</label>
+        <textarea id="desc" placeholder="Describe tu idea con tus palabras"></textarea>
+      </div>
+      <div class="field">
+        <label>¿Cuál es tu objetivo principal?</label>
+        <div class="choice-grid" data-group="goal">
+          <label class="choice"><input type="radio" name="goal" value="tiempo">Ahorrar tiempo</label>
+          <label class="choice"><input type="radio" name="goal" value="comunicacion">Mejorar la comunicación con mis clientes o equipo</label>
+          <label class="choice"><input type="radio" name="goal" value="imagen">Profesionalizar mi imagen</label>
+          <label class="choice"><input type="radio" name="goal" value="centralizar">Centralizar información dispersa</label>
+        </div>
+      </div>
+      <div class="field">
+        <label>¿Ya tienes un presupuesto definido, o buscas que te ayudemos a dimensionarlo?</label>
+        <div class="choice-grid" data-group="budget">
+          <label class="choice"><input type="radio" name="budget" value="definido">Ya tengo un rango definido</label>
+          <label class="choice"><input type="radio" name="budget" value="orientacion">Busco que me orienten</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="step" data-s="4">
+      <div class="step-eyebrow">04</div>
+      <div class="step-title">Logística</div>
+
+      <div class="field">
+        <label for="deadline">¿Para cuándo te gustaría tener el proyecto finalizado?</label>
+        <input type="text" id="deadline" placeholder="Fecha o plazo aproximado">
+      </div>
+      <div class="field">
+        <label>¿Con qué frecuencia te gustaría recibir actualizaciones del proyecto?</label>
+        <div class="choice-grid" data-group="updates">
+          <label class="choice"><input type="radio" name="updates" value="diaria">Diaria</label>
+          <label class="choice"><input type="radio" name="updates" value="semanal">Semanal</label>
+          <label class="choice"><input type="radio" name="updates" value="hitos">Solo en hitos importantes</label>
+        </div>
+      </div>
+      <div class="field">
+        <label>Tu nivel de conocimiento técnico</label>
+        <div class="scale" id="techScale">
+          <button type="button" data-v="0">0</button>
+          <button type="button" data-v="1">1</button>
+          <button type="button" data-v="2">2</button>
+          <button type="button" data-v="3">3</button>
+          <button type="button" data-v="4">4</button>
+          <button type="button" data-v="5">5</button>
+        </div>
+        <div class="scale-labels"><span>Bajo</span><span>Alto</span></div>
+      </div>
+    </div>
+
+    <div class="step" data-s="5">
+      <div class="step-eyebrow">05</div>
+      <div class="step-title">Referencias</div>
+
+      <div class="field">
+        <label for="refs">¿Hay proyectos o sitios de la competencia que te inspiren o consideres relevantes?</label>
+        <textarea id="refs" placeholder="Opcional"></textarea>
+      </div>
+    </div>
+
+    <div class="step" data-s="final">
+      <div class="final">
+        <div class="mark">✓</div>
+        <h2>Brief recibido</h2>
+        <p>Gracias — reviso tu información y te escribo por correo o WhatsApp en menos de 48 horas con una propuesta a la medida. Si tienes documentos relevantes (wireframes, manual de marca, textos), puedes responder a ese mensaje adjuntándolos.</p>
+      </div>
+    </div>
+
+    <div class="nav" id="navBar">
+      <button type="button" class="btn btn-ghost" id="prevBtn">Atrás</button>
+      <button type="button" class="btn btn-primary" id="nextBtn">Continuar</button>
+    </div>
+
+  </form>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/supabase-js/2.45.4/supabase.min.js"></script>
+<script>
+  const SUPABASE_URL = 'https://ymeyzallbzsynfaynvtz.supabase.co';
+  const SUPABASE_KEY = 'sb_publishable_KKHl1J_LeaJ45nJyTVXhkQ_LPz53nDJ';
+  const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+</script>
+<script>
+  const total = 5;
+  const stepNames = {1:'Contacto', 2:'Situación actual', 3:'Proyecto', 4:'Logística', 5:'Referencias'};
+  let current = 1;
+  const steps = document.querySelectorAll('.step');
+  const stepLabel = document.getElementById('stepLabel');
+  const stepName = document.getElementById('stepName');
+  const progressFill = document.getElementById('progressFill');
+  const prevBtn = document.getElementById('prevBtn');
+  const nextBtn = document.getElementById('nextBtn');
+  const navBar = document.getElementById('navBar');
+
+  function render(){
+    steps.forEach(s => s.classList.toggle('active', s.dataset.s == current));
+    if(current === 'final'){
+      navBar.style.display = 'none';
+      progressFill.style.width = '100%';
+    } else {
+      navBar.style.display = 'flex';
+      stepLabel.textContent = `Paso ${current} de ${total}`;
+      stepName.textContent = stepNames[current];
+      progressFill.style.width = `${(current/total)*100}%`;
+      prevBtn.disabled = current === 1;
+      nextBtn.textContent = current === total ? 'Enviar brief' : 'Continuar';
+    }
+  }
+
+  document.querySelectorAll('.choice-grid').forEach(grid => {
+    grid.addEventListener('click', e => {
+      const label = e.target.closest('.choice');
+      if(!label) return;
+      grid.querySelectorAll('.choice').forEach(c => c.classList.remove('picked'));
+      label.classList.add('picked');
+    });
+  });
+
+  const techScale = document.getElementById('techScale');
+  techScale.addEventListener('click', e => {
+    const btn = e.target.closest('button');
+    if(!btn) return;
+    techScale.querySelectorAll('button').forEach(b => b.classList.remove('picked'));
+    btn.classList.add('picked');
+    techScale.dataset.value = btn.dataset.v;
+  });
+
+  function getRadioValue(name){
+    const el = document.querySelector(`input[name="${name}"]:checked`);
+    return el ? el.value : null;
+  }
+
+  async function submitBrief(){
+    nextBtn.disabled = true;
+    nextBtn.textContent = 'Enviando...';
+    const payload = {
+      name: document.getElementById('name').value || null,
+      email: document.getElementById('email').value || null,
+      phone: document.getElementById('phone').value || null,
+      scale: getRadioValue('scale'),
+      tracking: getRadioValue('tracking'),
+      time_spent: getRadioValue('time'),
+      description: document.getElementById('desc').value || null,
+      goal: getRadioValue('goal'),
+      budget_status: getRadioValue('budget'),
+      deadline: document.getElementById('deadline').value || null,
+      update_frequency: getRadioValue('updates'),
+      tech_level: techScale.dataset.value ? parseInt(techScale.dataset.value) : null,
+      references_notes: document.getElementById('refs').value || null
+    };
+    const { error } = await supabaseClient.from('briefs').insert([payload]);
+    nextBtn.disabled = false;
+    if(error){
+      nextBtn.textContent = 'Reintentar envío';
+      console.error(error);
+      return false;
+    }
+    return true;
+  }
+
+  nextBtn.addEventListener('click', async () => {
+    if(current < total){
+      current++;
+      render();
+    } else {
+      const ok = await submitBrief();
+      if(ok){
+        current = 'final';
+        render();
+      }
+    }
+  });
+
+  prevBtn.addEventListener('click', () => {
+    if(current > 1){
+      current--;
+      render();
+    }
+  });
+
+  render();
+</script>
+</body>
+</html>
