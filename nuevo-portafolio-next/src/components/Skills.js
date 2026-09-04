@@ -4,11 +4,11 @@ const skills = [
   { name: 'SQL', icon: '/icons/mysql.png' },
   { name: 'PostgreSQL', icon: '/icons/postgres.png'},
   { name: 'Git', icon: '/icons/git.png' },
-  { name: 'Docker', icon: '/icons/docker.webp' },
+  { name: 'Docker', icon: '/icons/docker.png' },
   { name: 'Azure DevOps', icon: '/icons/Azure-DevOps-Logo.png' },
-  { name: 'Claude', icon: '/icons/claude-logo-png_seeklogo-554540.png' },
-  { name: 'Codex', icon: '/icons/codex.jpeg' },
-  { name: 'Antigravity', icon: '/icons/antigravity.jpeg' },
+  { name: 'Claude', icon: '/icons/claude.png' },
+  { name: 'Codex', icon: '/icons/codex.png' },
+  { name: 'Antigravity', icon: '/icons/antigravity.png' },
 ];
 
 const Skills = () => {
