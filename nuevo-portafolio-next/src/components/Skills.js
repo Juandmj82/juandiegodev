@@ -4,8 +4,11 @@ const skills = [
   { name: 'SQL', icon: '/icons/mysql.png' },
   { name: 'PostgreSQL', icon: '/icons/postgres.png'},
   { name: 'Git', icon: '/icons/git.png' },
-  { name: 'Docker', icon: '/icons/docker.png' },
+  { name: 'Docker', icon: '/icons/docker.svg' },
   { name: 'Azure DevOps', icon: '/icons/azure.png' },
+  { name: 'Claude', icon: '/icons/claude.svg' },
+  { name: 'Codex', icon: '/icons/codex.svg' },
+  { name: 'Antigravity', icon: '/icons/antigravity.svg' },
 ];
 
 const Skills = () => {
